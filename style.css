@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+    list-style: none;
+    text-decoration: none;
+}
+header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    padding: 33px 9%;
+    background: transparent;
+
+}
+.logo{
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+.navlist{
+   display: flex;
+   
+} 
+.navlist a{
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+.navlist a:hover{
+    border-bottom: 2px solid white;
+}
+#menu-icon{
+    color: white;
+    font-size: 30px;
+    z-index: 10001;
+    cursor: pointer;   
+    display: none;    
+}
+.elden{
+    height: 1080px;
+    width: 1920px;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #0a0a0a 30%, #0f0f0f 28.53%, #080808 70.52%);
+    position: relative;
+    display: grid;
+    align-items: center;
+    color: white;
+}
+.elden img{
+   width: 848px;
+   height: auto;
+   margin: 0 auto;
+   display: block;
+   border-radius: 20px;
+}
+
+.elden .link{
+    display: inline-flex;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+    margin-top:10px;
+    color: white;
+    text-decoration: none;
+    
+}
+.elden h4{
+     margin-top: 100px;
+     
+}
+
+.elden h1{
+    margin-bottom: 100px;
+}
+
+.elden h1, .elden h4{
+ margin: 0;
+ padding: 0;
+}
