@@ -1,0 +1,20 @@
+{
+  "name": "Elden Ring Nightreign",
+  "short_name": "EldenRing",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "style/elden.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "style/elden.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+}
+ ]
+}

@@ -5,6 +5,7 @@
     font-family: "Playfair Display", serif;
     list-style: none;
     text-decoration: none;
+    font-size: 15px;
 }
 header{
     position: fixed;
@@ -87,3 +88,43 @@ header{
  margin: 0;
  padding: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .elden {
+        height: auto;
+        padding: 20px;
+    }
+    .elden img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .navlist {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+    .navlist a {
+        margin: 10px 0;
+        max-width: 100%;
+    }
+
+    .elden h1{
+        font-size: 20px;
+    }
+
+    .elden {
+        width: 100%;
+        max-width: 100%;
+        white-space: normal;
+        word-wrap: break-word;
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+
+
+}
+
+
+
+    

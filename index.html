@@ -7,6 +7,11 @@
 
     <!--custom css link-->
     <link rel="stylesheet" type="text/css" href="./style.css">
+    
+    <link rel="manifest" href="manifest.json">
+   
+
+
 
     <!--boxicons link-->
     <link rel="stylesheet"
@@ -24,9 +29,24 @@
 </head>
 
 </head>
+<script>
+  // Registrar Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registrado com sucesso:', registration.scope);
+        })
+        .catch(error => {
+          console.log('Falha ao registrar ServiceWorker:', error);
+        });
+    });
+  }
+</script>
 <body>
-      
+   
      <header>
+         
          <a href="#" class="logo"><ELDEN></a>
           
          <ul class="navlist">
@@ -41,8 +61,8 @@
         <div class="elden">
             <h4>FromSoftware</h4>
             <h1>ELDEN RING DLC</h1>
-            <p>ELDEN RING, desenvolvido pela FromSoftware, Inc. e pela BANDAI NAMCO Entertainment Inc.,<br> é uma aventura de RPG de ação e fantasia ambientada em um mundo criado 
-por Hidetaka Miyazak e George R. R. Martin.</p>
+            <h3>ELDEN RING, desenvolvido pela FromSoftware,<br> Inc. e pela BANDAI NAMCO Entertainment Inc.,<br> é uma aventura de RPG de ação e fantasia ambientada <br>em um mundo criado 
+por Hidetaka Miyazak e George R. R. Martin.</h3>
          <div class="img" id="imagem">
           <img src="elden.jpeg">
          
@@ -52,7 +72,7 @@ por Hidetaka Miyazak e George R. R. Martin.</p>
         <a href="https://youtu.be/Djtsw5k_DNc?si=Ysn4DoOSMpJQym6I" target="_blank" class="ctaa"><i class="ri-play-fill"></i>Assista a Gameplay</a>
         </div>
         </div>
-          
+   
       
      
      
