@@ -2,7 +2,7 @@
 <html>
 <head>
    <meta charset="UTF-8">
-   <meta name = "viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Elden Ring Nightreign</title>
 
     <!--custom css link-->
@@ -10,74 +10,73 @@
     
     <link rel="manifest" href="manifest.json">
    
-
-
-
     <!--boxicons link-->
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <!--remixicons link-->
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
 
     <!--google fonts link-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 
-</head>
-<script>
-  // Registrar Service Worker
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-          console.log('ServiceWorker registrado com sucesso:', registration.scope);
-        })
-        .catch(error => {
-          console.log('Falha ao registrar ServiceWorker:', error);
-        });
-    });
-  }
-</script>
 <body>
-   
-     <header>
-         
-         <a href="#" class="logo"><ELDEN></a>
-          
-         <ul class="navlist">
+    <header>
+        <a href="#" class="logo"><ELDEN></a>
+        <ul class="navlist">
            <li><a href="index.html">Início</a></li>
            <li><a href="https://www.gamevicio.com/noticias/2024/12/entenda-como-elden-ring-nightreign-funcionara/" target="_blank" >Sobre</a></li>
            <li><a href="https://store.steampowered.com/app/2622380/ELDEN_RING_NIGHTREIGN/" target="_blank" >Pré-venda</a></li>
-         </ul>
-         
-          <div class="bx bx-menu" id="menu-icon"></div>
-     </header>
+        </ul>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
     
-        <div class="elden">
-            <h4>FromSoftware</h4>
-            <h1>ELDEN RING DLC</h1>
-            <h3>ELDEN RING, desenvolvido pela FromSoftware,<br> Inc. e pela BANDAI NAMCO Entertainment Inc.,<br> é uma aventura de RPG de ação e fantasia ambientada <br>em um mundo criado 
-por Hidetaka Miyazak e George R. R. Martin.</h3>
-         <div class="img" id="imagem">
-          <img src="elden.jpeg">
-         
-         </div>
+    <div class="elden">
+        <h4>FromSoftware</h4>
+        <h1>ELDEN RING DLC</h1>
+        <h3>ELDEN RING, desenvolvido pela FromSoftware,<br> Inc. e pela BANDAI NAMCO Entertainment Inc.,<br> é uma aventura de RPG de ação e fantasia ambientada <br>em um mundo criado por Hidetaka Miyazak e George R. R. Martin.</h3>
+        
+        <div class="img" id="imagem">
+            <img src="elden.jpeg">
+        </div>
+        
         <div class="link">
-        <a href="#">Trailer</a>
-        <a href="https://youtu.be/Djtsw5k_DNc?si=Ysn4DoOSMpJQym6I" target="_blank" class="ctaa"><i class="ri-play-fill"></i>Assista a Gameplay</a>
+            <a href="#">Trailer</a>
+            <a href="https://youtu.be/Djtsw5k_DNc?si=Ysn4DoOSMpJQym6I" target="_blank" class="ctaa"><i class="ri-play-fill"></i>Assista a Gameplay</a>
         </div>
-        </div>
-   
-      
-     
-     
+    </div>
 
-     <!--custom js links-->
-     <script src="js/script.js"></script>
+    <!--custom js links-->
+    <script src="js/script.js"></script>
+    
+    <!-- JavaScript para consumir a API GET e exibir os dados -->
+    <script>
+      fetch('http://localhost:3000/api/game')
+        .then(response => response.json())
+        .then(data => {
+          // Exibir os dados no frontend
+          document.querySelector('.elden h1').textContent = data.title;
+          document.querySelector('.elden h3').textContent = data.description;
+          document.querySelector('.elden .link a').setAttribute('href', data.trailer);
+          document.querySelector('.elden .img img').setAttribute('src', data.image);
+        })
+        .catch(error => console.log('Erro ao buscar dados da API:', error));
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {
+              console.log('Service Worker registrado com sucesso:', registration.scope);
+            })
+            .catch((error) => {
+              console.log('Falha ao registrar Service Worker:', error);
+            });
+        });
+      }
+    </script>    
 </body>
 </html>
